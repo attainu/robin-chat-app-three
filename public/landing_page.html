@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheet/landing_page_stylesheet.css">
+    <link rel="stylesheet" href="./stylesheet/all.min.css">
+    <link rel="stylesheet" href="./stylesheet/fontawesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <header class="logo">
+            <i class="fas fa-project-diagram" style="font-size: 35px;color:  rgb(89, 0, 89);margin-right: 15px;"></i>
+            <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
+        </header>
+        <main class="join-main">
+            <div class="create-workspace">
+                <p style="font-size: 40px; font-size:bolder; color: black;margin-bottom: 10px;">
+                    Try Stack-Exchange with your team, for free
+                </p>
+                <h3>
+                    Create a brand-new workspace for you and your team.
+                </h3>
+                <a href="workspace.html" class="btn">
+                    <i class="fas fa-plus" style="margin-right: 5px;"></i>
+                    <h4>Create a workspace</h4>
+                </a>
+            </div>
+            <div class="signin-workspace">
+                <p style="font-size: 40px; font-size:bolder; color: rgb(255, 255, 255);margin-bottom: 10px;">
+                    Is your team already using Stack Exchange?
+                </p>
+                <h3 style="color: whitesmoke;">
+                    Find and sign in to your team’s existing workspace
+                </h3>
+                <form action="/dashboard" method="get">
+                    <input type="hidden">
+                    <button type="submit" class="btn" style="outline: none; border: none; cursor: pointer;"><h4>Sign in to Stack-Exchange</h4></button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

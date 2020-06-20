@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/dashboard_stylesheet.css">
+    <link rel="stylesheet" href="/stylesheet/all.min.css">
+    <link rel="stylesheet" href="/stylesheet/fontawesome.min.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="logo">
+            <i class="fas fa-project-diagram" style="font-size: 35px;color:  rgb(89, 0, 89);margin-right: 15px;"></i>
+            <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
+        </header>
+        <h5>You’re already signed in to…</h5>
+        <main class="open-workspace">
+            <div class="Launch">
+                <div class="icon"><i class="fas fa-layer-group" style="margin-right: 5px; font-size: 30px;color: rgb(89, 0, 89) "></i><h2>Stack-Exchange</h2></div>
+                <div><form action="/launch" method="post">
+                    <input type="hidden" name="Workspace" value="Stack-Exchange">
+                    <button type="submit" class="open-btn">Open</button>
+                </form>
+                </div>
+            </div>
+            <div class="Launch">
+                <div class="icon"><i class="fas fa-layer-group" style="margin-right: 5px; font-size: 30px;color: rgb(89, 0, 89) "></i><h2>Geeks for geeks</h2></div>
+                <div><form action="/launch" method="post">
+                    <input type="hidden" name="Workspace" value="Stack-Exchange">
+                    <button type="submit" class="open-btn">Open</button>
+                </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

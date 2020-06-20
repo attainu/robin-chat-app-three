@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/workspace_stylesheet.css">
+    <link rel="stylesheet" href="/stylesheet/all.min.css">
+    <link rel="stylesheet" href="/stylesheet/fontawesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="/javascript/workspace.js"></script>
+    <title>Create workspace</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="logo">
+            <i class="fas fa-project-diagram" style="font-size: 35px;color:  rgb(89, 0, 89);margin-right: 15px;"></i>
+            <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
+        </header>
+        <main class="create-main">
+            <form action="/workspace" method="post">
+                <div class="question">
+                    <h3>What’s the name of your company or team?</h3>
+                </div>
+                <div class="inputField">
+                    <input type="text" name="Name" placeholder="eg. Stack-Exchange">
+                </div>
+                <div class="question">
+                    <h3>Write Short discription about your company or team</h3>
+                </div>
+                <div class="inputField">
+                    <textarea name="Discription"
+                        placeholder="eg. Stack-Exchange is real time chat application"></textarea>
+                </div>
+                <div class="question">
+                    <h3>Add teammates</h3>
+                    <div id="input_field_wrapper">
+                        <div class="inputField" style="margin-bottom: 5px;">
+                            <input type="email" name="Emails[]" placeholder="eg. name@gmail.com">
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="add_button" title="Add field"><button type="button"
+                            class="add-btn"><i class="fas fa-plus" style="margin-right: 5px;"></i>Add
+                            another</button></a>
+                </div>
+                <div class="submit">
+                    <button type="submit" >See your workspace</button>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

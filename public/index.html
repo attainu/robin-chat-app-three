@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/index_stylesheet.css">
+    <link rel="stylesheet" href="/stylesheet/fontawesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/all.min.css">
+    <script type="text/javascript">
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+        
+    </script>
+    <title>Stack-Exchange</title>
+</head>
+<body>
+    <div class="container">
+        <header class="logo">
+            <i class="fas fa-project-diagram" style="font-size: 35px;color:  rgb(89, 0, 89);margin-right: 15px;"></i>
+            <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
+        </header>
+        <main class="join-main">
+            <div class="create-workspace">
+                <p style="font-size: 35px; font-size:bolder; color: black;margin-bottom: 10px;">
+                    Let's signup for Stack-Exchange
+                </p>
+                <h3 style="color: rgba(0, 0, 0, 0.705); margin-bottom: 8px;">
+                    First of all, register yourself.
+                </h3>
+                <form action="/signup" method="post">
+                    <h3 class="register">Enter UserName</h3>
+                    <div class="inputField">
+                        <input type="text" name="Username" placeholder="firstName_lastName">
+                    </div>
+                    <h3 class="register">Enter Email Address</h3>
+                    <div>
+                        <input type="email" name="Email" placeholder="name@email.com">
+                    </div>
+                    <h3 class="register">Enter Password</h3>
+                    <div>
+                        <input type="password" name="Password" placeholder="password">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">SignUp</button>
+                    </div>
+                </form>
+            </div>
+            <div class="signin-workspace">
+                <p style="font-size: 40px; font-size:bolder; color: rgb(255, 255, 255);margin-bottom: 5px;">
+                    Let's join your team
+                </p>
+                <h3 style="color: rgb(146, 146, 146); margin-bottom: 8px;">
+                    Signin with your register username and password
+                </h3>
+                <form action="/signin" method="post">
+                    <h3 style="color: whitesmoke;">
+                        Enter your registered email
+                    </h3>
+                    <div class="inputField">
+                        <input type="text" name="Email" placeholder="name@email.com">
+                    </div>
+                    <h3 style="color: whitesmoke;">
+                        Enter your Password
+                    </h3>
+                    <div class="inputField">
+                        <input type="password" name="Password" placeholder="password">
+                    </div>
+                    <div>
+                        <button type="submit" class="btn">Signin</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
