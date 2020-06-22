@@ -25,7 +25,7 @@ class User {
             req.header.Authorization = `Bearer ${token}`
             res.status(200).redirect('/dashboard')
         } catch (error) {
-            res.status(500).send(error.message)
+            res.status(500).sendFile('signinError.html', { root : '\public'})
         }
     }
 
@@ -42,8 +42,14 @@ class User {
         res.status(200).sendFile('landing_page.html', { root: '\public' })
     }
 
-    dashboard(req, res, next){
-        res.status(200).render('dashboard')
+    async dashboard(req, res, next){
+        try {
+            const user = await userModel.findOne({ _id : req.user._id}).populate('Workspaces.workspace')
+            res.status(200).render('dashboard', 
+            { Err : null ,User: req.user.Username ,Workspaces : user.Workspaces })
+        } catch (error) {
+            res.status(500).send(error)
+        }
     }
 }
 

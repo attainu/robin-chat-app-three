@@ -16,8 +16,6 @@ Router.get('/landing', auth, user.landing)
 
 Router.get('/logout', auth, user.logout)
 
-Router.get('/createworkspace')
-Router.post('/createworkspace')
 Router.get('/dashboard', auth, user.dashboard)
 
 module.exports = Router

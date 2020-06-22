@@ -20,7 +20,59 @@ a{
 
 .container{
     max-width: 900px;
-    margin: 80px auto;
+    margin: 60px auto;
+}
+
+.logout{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.create-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    display: flex;
+    width: 300px;
+    height: 40px;
+    color: rgb(80, 9, 80);
+    background-color: white;
+    border: 1px solid #c7c6c6;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.fa-user-circle{
+    position: absolute; 
+    font-size: 30px; 
+    margin-top: 3px;
+    color: rgb(89, 0, 89);
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+
+input[type=text]{
+    width: 200px;
+    height: 35px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=text]:focus{
+    outline: none;
+    box-shadow: 0 0 7px rgba(81, 203, 238, 1);
+    border: 3px solid rgba(81, 203, 238, 1);
 }
 
 .container .logo{

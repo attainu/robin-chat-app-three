@@ -16,25 +16,56 @@
             <i class="fas fa-project-diagram" style="font-size: 35px;color:  rgb(89, 0, 89);margin-right: 15px;"></i>
             <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
         </header>
+        <div class="logout">
+            <i class="far fa-user-circle"> <%= User %></i>
+            <form action="/logout" method="get">
+                <input type="hidden">
+                <button type="submit" class="open-btn" style="margin-left: 89%;">Logout</button>
+            </form>
+        </div>
+        <h5>Create brand new workspace</h5>
+        <div class="create-btn">
+        <form action="/user/createworkspace" method="get">
+            <input type="hidden">
+            <button type="submit" class="btn" style="outline: none; cursor: pointer;">
+                <i class="fas fa-plus" style="margin-right: 5px;"></i>
+                <h4>Create a workspace</h4>
+            </button>
+        </form>
+        </div>
+        <% if(Err) {%> 
+            <h5><%= Err %></h5>
+        <%} else {%>
+            <h5>Join new workspace by entering it's name</h5>
+        <%}%>
+        <div class="searchbar">
+            <form action="/user/getdashboard" method="post">
+                <input type="text" name="Name">
+                <button type="submit" class="open-btn">join</button>
+            </form>
+        </div>
+        <% if( Workspaces.length > 0) {%>
         <h5>You’re already signed in to…</h5>
         <main class="open-workspace">
+            <% for (var i=0; i<Workspaces.length; i++) { %>
             <div class="Launch">
-                <div class="icon"><i class="fas fa-layer-group" style="margin-right: 5px; font-size: 30px;color: rgb(89, 0, 89) "></i><h2>Stack-Exchange</h2></div>
-                <div><form action="/launch" method="post">
-                    <input type="hidden" name="Workspace" value="Stack-Exchange">
-                    <button type="submit" class="open-btn">Open</button>
-                </form>
+                <div class="icon"><i class="fas fa-layer-group"
+                        style="margin-right: 5px; font-size: 30px;color: rgb(89, 0, 89) ">
+                    </i>
+                    <h2><%= Workspaces[i].workspace.Name %></h2>
+                </div>
+                <div>
+                    <form action="/launch" method="post">
+                        <input type="hidden" name="Workspace" value="Stack-Exchange">
+                        <button type="submit" class="open-btn">Open</button>
+                    </form>
                 </div>
             </div>
-            <div class="Launch">
-                <div class="icon"><i class="fas fa-layer-group" style="margin-right: 5px; font-size: 30px;color: rgb(89, 0, 89) "></i><h2>Geeks for geeks</h2></div>
-                <div><form action="/launch" method="post">
-                    <input type="hidden" name="Workspace" value="Stack-Exchange">
-                    <button type="submit" class="open-btn">Open</button>
-                </form>
-                </div>
-            </div>
+            <% } %>
         </main>
+        <%} else {%>
+            <h5>You haven't join any workspace yet !, please join the workspace first</h5>
+        <%}%>
     </div>
 </body>
 

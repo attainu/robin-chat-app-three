@@ -4,6 +4,7 @@ import path from 'path'
 import express from 'express'
 import './models/mongodb.config'
 import userAuth from './routes/user.auth.routes'
+import userWorkspace from './routes/workspace.route'
 import morgan from 'morgan'
 import nocache from 'nocache'
 
@@ -19,6 +20,7 @@ app.use(morgan('dev'))
 app.use(nocache())
 
 app.use('/',userAuth)
+app.use('/user', userWorkspace)
 
 app.use('/', (req, res, next) => {
     res.status(404).send('Page Not Found')

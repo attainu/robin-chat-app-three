@@ -22,10 +22,13 @@
                 <h3>
                     Create a brand-new workspace for you and your team.
                 </h3>
-                <a href="workspace.html" class="btn">
-                    <i class="fas fa-plus" style="margin-right: 5px;"></i>
-                    <h4>Create a workspace</h4>
-                </a>
+                <form action="/user/createworkspace" method="get">
+                    <input type="hidden">
+                    <button type="submit" class="btn" style="outline: none; cursor: pointer;">
+                        <i class="fas fa-plus" style="margin-right: 5px;"></i>
+                        <h4>Create a workspace</h4>
+                    </button>
+                </form>
             </div>
             <div class="signin-workspace">
                 <p style="font-size: 40px; font-size:bolder; color: rgb(255, 255, 255);margin-bottom: 10px;">
@@ -36,7 +39,9 @@
                 </h3>
                 <form action="/dashboard" method="get">
                     <input type="hidden">
-                    <button type="submit" class="btn" style="outline: none; border: none; cursor: pointer;"><h4>Sign in to Stack-Exchange</h4></button>
+                    <button type="submit" class="btn" style="outline: none; border: none; cursor: pointer;">
+                        <h4>Sign in to Stack-Exchange</h4>
+                    </button>
                 </form>
             </div>
         </main>

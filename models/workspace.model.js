@@ -4,6 +4,7 @@ const workspaceSchema = mongoose.Schema({
 
     Name : {
         type : String,
+        unique : true,
         required : true,
         trim : true
     },
@@ -14,22 +15,21 @@ const workspaceSchema = mongoose.Schema({
     },
     ValidEmails : [{
         type : String,
-        unique : true,
         trim : true,
         lowercase : true
     }],
-    Teammates : [
-        {
+    Teammates : [{
+        Teammate :{
             type : mongoose.Schema.Types.ObjectId,
             ref : 'User'
         }
-    ],
-    Admin : [
-        {
+    }],
+    Admins : [{
+        Admin : {
             type : mongoose.Schema.Types.ObjectId,
             ref : 'User'
         }
-    ],
+    }],
 
 })
 

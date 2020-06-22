@@ -3,7 +3,7 @@ $(document).ready(function () {
     var add_more_button = $('.add_button');
     var field_wrapper = $('#input_field_wrapper')
     var field_html = `<div class="inputField" style="margin-bottom: 5px; margin-left: 12px;">
-    <input type="email" name="Emails[]" placeholder="eg. name@gmail.com" />
+    <input type="email" name="ValidEmails" placeholder="eg. name@gmail.com" />
     <a href="javascript:void(0);" class="remove_button"> <i class="fas fa-times" id="close-btn"></i></a>
 </div>`;
     $(add_more_button).click(function () {

@@ -19,7 +19,7 @@
             <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
         </header>
         <main class="create-main">
-            <form action="/workspace" method="post">
+            <form action="/user/createworkspace" method="post">
                 <div class="question">
                     <h3>What’s the name of your company or team?</h3>
                 </div>
@@ -37,7 +37,7 @@
                     <h3>Add teammates</h3>
                     <div id="input_field_wrapper">
                         <div class="inputField" style="margin-bottom: 5px;">
-                            <input type="email" name="Emails[]" placeholder="eg. name@gmail.com">
+                            <input type="email" name="ValidEmails" placeholder="eg. name@gmail.com">
                         </div>
                     </div>
                     <a href="javascript:void(0);" class="add_button" title="Add field"><button type="button"
