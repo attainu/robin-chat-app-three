@@ -4,10 +4,14 @@ import userModel from '../models/user.model'
 
 const isAlreadyAuth = async (req, res, next) => {
     try {
-        if(!req.header.Authorization){
+        // if(!req.header.Authorization){
+        //     return next()
+        // }
+        // let token = req.header.Authorization.replace('Bearer', "").trim()
+        if(!req.cookies.auth){
             return next()
         }
-        let token = req.header.Authorization.replace('Bearer', "").trim()
+        let token = req.cookies.auth
         const decoded = jwt.verify(token, process.env.SECRET_KEY)
         const user = await userModel.findById( { _id : decoded._id} )
         if(!user){

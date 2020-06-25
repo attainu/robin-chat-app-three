@@ -1,6 +1,7 @@
+require('dotenv').config()
 import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://127.0.0.1:27017/stack-Exchange-data', {
+mongoose.connect(process.env.MONGODB_ATLAS_URL || process.env.MONGODB_LOCAL_URL, {
         useUnifiedTopology : true,
         useCreateIndex : true,
         useFindAndModify : true,

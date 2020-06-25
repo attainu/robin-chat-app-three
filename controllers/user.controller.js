@@ -9,7 +9,8 @@ class User {
     async signup(req, res, next) {
         const user = new userModel(req.body)
         const token = await user.genrateAuthToken()
-        req.header.Authorization = `Bearer ${token}`
+        // req.header.Authorization = `Bearer ${token}`
+        res.cookie('auth',token)
         try {
             await user.save()
             res.status(201).redirect('/landing')
@@ -22,7 +23,8 @@ class User {
         try {
             const user = await userModel.findByCredentials(req.body.Email, req.body.Password)
             const token = await user.genrateAuthToken()
-            req.header.Authorization = `Bearer ${token}`
+            // req.header.Authorization = `Bearer ${token}`
+            res.cookie('auth',token)
             res.status(200).redirect('/dashboard')
         } catch (error) {
             res.status(500).sendFile('signinError.html', { root : '\public'})
@@ -31,7 +33,8 @@ class User {
 
     async logout(req, res, next){
         try {
-            req.header.Authorization = null
+            // req.header.Authorization = null
+            res.clearCookie("auth")
             res.status(200).redirect('/')
         } catch (error) {
             res.status(500).send(error)

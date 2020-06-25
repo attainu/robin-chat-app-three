@@ -2,9 +2,10 @@ require('dotenv').config()
 import jwt from 'jsonwebtoken'
 import userModel from '../models/user.model'
 
-const auth = async (req, res, next) => {
+const Auth = async (req, res, next) => {
     try {
-        let token = req.header.Authorization.replace('Bearer', "").trim()
+        // let token = req.header.Authorization.replace('Bearer', "").trim()
+        let token = req.cookies.auth
         const decoded = jwt.verify(token, process.env.SECRET_KEY)
         const user = await userModel.findById( { _id : decoded._id} )
         if(!user){
@@ -18,4 +19,4 @@ const auth = async (req, res, next) => {
     }
 }
 
-module.exports = auth
+module.exports = Auth

@@ -26,11 +26,7 @@ const userSchema = new mongoose.Schema({
             type : mongoose.Schema.Types.ObjectId,
             ref : 'Workspace'
         }
-    }],
-    Socketid : {
-        type : String
-    }
-
+    }]
 })
 
 userSchema.methods.genrateAuthToken = function (){

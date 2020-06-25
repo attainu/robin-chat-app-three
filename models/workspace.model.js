@@ -30,7 +30,17 @@ const workspaceSchema = mongoose.Schema({
             ref : 'User'
         }
     }],
-
+    ChatHistory : [{
+        Username : {
+            type : String
+        },
+        Text : {
+            type : String
+        },
+        Time : {
+            type : String
+        }
+    }]
 })
 
 const Workspace = mongoose.model('Workspace', workspaceSchema)

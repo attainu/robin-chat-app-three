@@ -55,8 +55,8 @@
                     <h2><%= Workspaces[i].workspace.Name %></h2>
                 </div>
                 <div>
-                    <form action="/launch" method="post">
-                        <input type="hidden" name="Workspace" value="Stack-Exchange">
+                    <form action="/user/launch/<%= Workspaces[i].workspace.Name %>" method="post">
+                        <input type="hidden" name="Workspace" value=<%= Workspaces[i].workspace.Name %> >
                         <button type="submit" class="open-btn">Open</button>
                     </form>
                 </div>

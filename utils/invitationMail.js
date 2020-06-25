@@ -1,3 +1,4 @@
+require('dotenv').config()
 import nodemailer from 'nodemailer'
 
 export const sendInvitation = (workspace, emailsArr) => {
@@ -5,33 +6,28 @@ export const sendInvitation = (workspace, emailsArr) => {
         `<h2>Stack-Exchange</h2>
         <p>This is the invitation to join ${workspace} workspace</p>
         <p>click below link to create your Stack-Exchange Account and join your team</p>
-        <a href="http://127.0.0.1:3000"></a>
-        <h5>Note : Join with this Email id only</h5>`
+        <p>"http://127.0.0.1:3000"</p>
+        <h3>Note : Join with this Email id only</h3>`
 
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
+        debug: true,
         port: 587,
-        secure: false, // true for 465, false for other ports
+        secure: false, 
         auth: {
-            user: 'stackexchange2020@gmail.com', // generated ethereal user
-            pass: '8007045011'  // generated ethereal password
+            user: process.env.SYS_EMAIL, 
+            pass: process.env.SYS_EMAIL_PASSWORD
         },
         tls:{
         rejectUnauthorized:false
         }
     })
 
-    let recipients = ''
-
-    for (let index = 0; index < emailsArr.length; index++) {
-        recipients = recipients + emailsArr[index] + ','
-    }
-
     let mailOptions = {
-        from: 'Stack-Exchange', // sender address
-        to: `${recipients}`, // list of receivers
-        subject: 'Joining invitation', // Subject line
-        html: output // html body
+        from: 'Stack-Exchange', 
+        to: emailsArr.join(), 
+        subject: 'Joining invitation', 
+        html: output 
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
