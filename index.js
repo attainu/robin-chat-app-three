@@ -9,7 +9,6 @@ import userAuth from './routes/user.auth.routes'
 import userWorkspace from './routes/workspace.route'
 import userWebsocketes from './routes/websockets.route'
 import runWebsocket from './websocket/runWebsocket'
-import morgan from 'morgan'
 import nocache from 'nocache'
 
 const app = express();
@@ -21,7 +20,6 @@ app.use(express.urlencoded({ extended : false }))
 app.use(express.json())
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname,'public'), {index: '_'}))
-app.use(morgan('dev'))
 
 app.use(nocache())
 
