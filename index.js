@@ -30,7 +30,7 @@ app.use('/user', userWorkspace)
 app.use('/user', userWebsocketes)
 
 app.use('/', (req, res, next) => {
-    res.status(404).send('Page Not Found')
+    res.status(404).render('Error', { message : ['Opps !! Page not Found'], action : "/",btn : 'Go back'})
 })
 
 runWebsocket(server)

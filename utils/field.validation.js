@@ -8,9 +8,12 @@ export const validationResults = (req, res, next) => {
         }
         return next()
     } catch (err) {
-        res.status(422).json({
-            errors: err.mapped()
-        })
+        const err_msg = err.mapped()
+        let message = []
+        for(let idx in err_msg){
+            message.push(err_msg[idx].msg)
+        }
+        res.status(422).render('Error', { message , action : "/", btn : "Try Again"})
     }
 }
 
@@ -61,5 +64,32 @@ export const signin = [
         .withMessage('ERR_PASSWORD_TOO_SHORT_MIN_7'),
     (req, res, next) => {
         validationResults(req, res, next)
+    }
+]
+
+export const createWorkspace = [
+    check('Name')
+        .exists()
+        .withMessage('ERR_MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('ERR_EMPTY')
+        .isLength({ max: 15}),
+    check('Discription')
+        .exists()
+        .withMessage('ERR_MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('ERR_EMPTY'),
+    check('ValidEmails')
+        .exists()
+        .withMessage('ERR_MISSING')
+        .not()
+        .isEmpty()
+        .withMessage('ERR_EMPTY')
+        .isEmail()
+        .withMessage('ERR_NOT_EMAIL'),
+        (req, res, next) => {
+            validationResults(req, res, next)
     }
 ]

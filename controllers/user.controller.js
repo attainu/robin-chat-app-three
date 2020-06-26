@@ -10,11 +10,15 @@ class User {
         const user = new userModel(req.body)
         const token = await user.genrateAuthToken()
         // req.header.Authorization = `Bearer ${token}`
-        res.cookie('auth',token)
+        res.cookie('auth', token, { maxage : 21600000})
         try {
             await user.save()
             res.status(201).redirect('/landing')
         } catch (error) {
+            if(error.name === 'MongoError' && error.code === 11000){
+                return res.status(500).render('Error', { message : ['Email already register'], 
+                            action : '/', btn : 'Try Again'})
+            }
             res.status(500).send(error)
         }
     }
@@ -24,10 +28,10 @@ class User {
             const user = await userModel.findByCredentials(req.body.Email, req.body.Password)
             const token = await user.genrateAuthToken()
             // req.header.Authorization = `Bearer ${token}`
-            res.cookie('auth',token)
+            res.cookie('auth', token, { maxage : 21600000})
             res.status(200).redirect('/dashboard')
         } catch (error) {
-            res.status(500).sendFile('signinError.html', { root : '\public'})
+            res.status(500).render('Error', { message : 'Invalid Credentials !!', action : "/", btn : "Try Again"})
         }
     }
 

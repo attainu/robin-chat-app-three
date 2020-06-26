@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 export const sendInvitation = (workspace, emailsArr) => {
     const output = 
         `<h2>Stack-Exchange</h2>
-        <p>This is the invitation to join ${workspace} workspace</p>
+        <p>This is the invitation to join <span style="font-weight: bold;">"${workspace}"</span> workspace</p>
         <p>click below link to create your Stack-Exchange Account and join your team</p>
         <p>"http://127.0.0.1:3000"</p>
         <h3>Note : Join with this Email id only</h3>`

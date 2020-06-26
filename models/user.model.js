@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
     },
     Email : {
         type : String,
+        unique : true,
         required : true,
         trim : true,
         lowercase : true
@@ -31,7 +32,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.methods.genrateAuthToken = function (){
     const user = this
-    const token = jwt.sign( {_id : user._id.toString()}, process.env.SECRET_KEY)
+    const token = jwt.sign( {_id : user._id.toString()}, process.env.SECRET_KEY, { expiresIn : '6h'})
     return token
 }
 

@@ -24,7 +24,8 @@ class Workspace {
             { Err : null, User: req.user.Username ,Workspaces : user.Workspaces })
         } catch (error) {
             if(error.name === 'MongoError' && error.code === 11000){
-                return res.status(500).send('Workspace already registered')
+                return res.status(500).render('Error', { message : ['Workspace already taken'], 
+                            action : '/user/createworkspace', btn : 'Try Again'})
             }
             res.status(500).send(error)
         }

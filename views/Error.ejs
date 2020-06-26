@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./stylesheet/signinError_stylesheet.css">
-    <link rel="stylesheet" href="./stylesheet/all.min.css">
-    <link rel="stylesheet" href="./stylesheet/fontawesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/signinError_stylesheet.css">
+    <link rel="stylesheet" href="/stylesheet/all.min.css">
+    <link rel="stylesheet" href="/stylesheet/fontawesome.min.css">
     <title>Invalid Credentials</title>
 </head>
+
 <body>
     <div class="container">
         <header class="logo">
@@ -15,13 +17,16 @@
             <h1 style="color : black; font-size: 40px;">Stack-Exchange</h1>
         </header>
         <main class="main">
-            <h1 class="btn" style="border: none;">Invalid Credentials !!</h1>
-            <form action="/" method="get">
+            <% for(var i = 0; i<message.length; i++) {%>
+            <h1 class="btn" style="border: none;"><%= message[i] %></h1>
+            <%}%>
+            <form action=<%= action %> method="get">
                 <button type="submit" class="btn" style="outline: none; cursor: pointer;">
-                    <h4>Try Again</h4>
+                    <h4> <%= btn %></h4>
                 </button>
             </form>
         </main>
     </div>
 </body>
+
 </html>
