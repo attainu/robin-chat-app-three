@@ -6,7 +6,7 @@ export const sendInvitation = (workspace, emailsArr) => {
         `<h2>Stack-Exchange</h2>
         <p>This is the invitation to join <span style="font-weight: bold;">"${workspace}"</span> workspace</p>
         <p>click below link to create your Stack-Exchange Account and join your team</p>
-        <p>"http://127.0.0.1:3000"</p>
+        <p>https://stack-exchange-v1.herokuapp.com/</p>
         <h3>Note : Join with this Email id only</h3>`
 
     let transporter = nodemailer.createTransport({
