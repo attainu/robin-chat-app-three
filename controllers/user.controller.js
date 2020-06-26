@@ -31,7 +31,7 @@ class User {
             res.cookie('auth', token, { maxage : 21600000})
             res.status(200).redirect('/dashboard')
         } catch (error) {
-            res.status(500).render('Error', { message : 'Invalid Credentials !!', action : "/", btn : "Try Again"})
+            res.status(500).render('Error', { message : ['Invalid Credentials !!'], action : "/", btn : "Try Again"})
         }
     }
 

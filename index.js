@@ -35,6 +35,8 @@ app.use('/', (req, res, next) => {
 
 runWebsocket(server)
 
-server.listen(3000, () => {
-    console.log('http://127.0.0.1:3000');
+const PORT = process.env.PORT;
+
+server.listen(PORT, () => {
+    console.log(`app running on port ${PORT}`);
 })

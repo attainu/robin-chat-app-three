@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js",
     "devStart": "nodemon --exec babel-node index.js"
   },
   "keywords": [
@@ -15,6 +16,9 @@
   "author": "Jayesh Chavan",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
@@ -29,9 +33,6 @@
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/node": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
     "morgan": "^1.10.0"
   }
 }
