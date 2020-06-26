@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/chat_stylesheet.css">
+    <link rel="stylesheet" href="/stylesheet/fontawesome.min.css">
+    <link rel="stylesheet" href="/stylesheet/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <var id="username" style="display:none;"><%= Username %></var>
+    <var id="workspace" style="display: none;"><%= workspaceName %></var>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div style="display:flex; align-items: center;">
+                <i class="fas fa-project-diagram" style="font-size: 20px;color:  rgb(89, 0, 89);margin-right: 7px;"></i>
+                <h2 style="color : black">Stack-Exchange</h2>
+            </div>
+            <form action="/user/leave" method="get">
+                <input type="hidden">
+                <button type="submit" class="btn">Leave Room</button>
+            </form>
+        </header>
+        <main class="chat-main">
+            <div class="chat-sidebar">
+                <div class="workspace">
+                    <h2><%= workspaceName %></h2>
+                </div>
+                <div style="margin-left: 5px;display: flex; align-items: center;">
+                    <i class="fas fa-caret-down"></i>
+                    <h4>Channels</h4>
+                </div>
+                <ul id="channels">
+                    <div class="channel-link">
+                        <li><a href="chat.html" class="btn2"> # announcement </a></li>
+                    </div>
+                    <div class="channel-link">
+                        <li><a href="chat.html" class="btn2"> # askadmin </a></li>
+                    </div>
+                    <div class="channel-link">
+                        <li><a href="chat.html" class="btn2"> # group4 </a></li>
+                    </div>
+                </ul>
+            </div>
+            <div class="chat-messages">
+                <% for(var i = 0; i<messageContainer.length; i++) {%>
+                    <div class="message">
+                        <p class="meta"><%= messageContainer[i].Username %>
+                            <span class="time"><%= messageContainer[i].Time %></span></p>
+                        <p class="text">
+                            <%= messageContainer[i].Text %>
+                        </p>
+                    </div>
+                <%}%>
+            </div>
+        </main>
+        <div class="chat-form-container">
+            <form id="chat-form">
+              <input
+                id="msg"
+                type="text"
+                placeholder="Enter Message"
+                required
+                autocomplete="off"
+              />
+              <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+            </form>
+          </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascript/frontend_websocket.js"></script>
+</body>
+</html>

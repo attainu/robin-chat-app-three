@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+    font-size: 16px;
+}
+
+ul{
+    list-style : none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.container .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.join-main{
+    display: flex;
+    min-height: 300px;
+    width: 100%;
+    border: 1px solid rgb(182, 181, 181);
+}
+
+.create-workspace{
+    flex: 1;
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+}
+
+.signin-workspace{
+    width: 50%;
+    padding: 40px;
+    background-color: rgb(80, 9, 80);
+}
+
+.create-workspace .btn{
+    cursor: pointer;
+    display: flex;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.signin-workspace .btn{
+    cursor: pointer;
+    display: flex;
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 27px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.signin-workspace h3{
+    margin: 10px auto;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.signin-workspace .inputField{
+    margin-bottom: 20px;
+}
+
+.create-workspace .register{
+    color: black;
+    margin: 7px auto;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+input[type=text]{
+    width: 80%;
+    height: 40px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=email]{
+    width: 80%;
+    height: 40px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=email]:focus{
+    outline: none;
+    border: 3px solid rgba(80, 9, 80, 0.5);
+}
+
+input[type=text]:focus{
+    outline: none;
+    border: 3px solid rgba(80, 9, 80, 0.5);
+}
+
+input[type=password]{
+    width: 80%;
+    height: 40px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=password]:focus{
+    outline: none;
+    border: 3px solid rgba(80, 9, 80, 0.5);
+}

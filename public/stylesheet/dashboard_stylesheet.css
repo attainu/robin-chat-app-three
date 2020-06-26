@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    color: #555555;
+    font-size: 16px;
+}
+
+ul{
+    list-style : none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 900px;
+    margin: 60px auto;
+}
+
+.logout{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.create-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    display: flex;
+    width: 300px;
+    height: 40px;
+    color: rgb(80, 9, 80);
+    background-color: white;
+    border: 1px solid #c7c6c6;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.fa-user-circle{
+    position: absolute; 
+    font-size: 30px; 
+    margin-top: 3px;
+    color: rgb(89, 0, 89);
+}
+
+.searchbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+
+input[type=text]{
+    width: 200px;
+    height: 35px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+input[type=text]:focus{
+    outline: none;
+    box-shadow: 0 0 7px rgba(81, 203, 238, 1);
+    border: 3px solid rgba(81, 203, 238, 1);
+}
+
+.container .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+h5{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(89, 0, 89);
+    margin: 10px 0px;
+}
+
+.open-workspace{    
+    position: absolute;
+    right: 340px;
+    border: 1px solid gray;
+    border-radius: 25px;
+}
+
+.Launch{
+    margin: 10px 40px;
+    display: flex;
+    color: black;
+    width: 600px;
+    height: 60px;
+    padding: 10px;
+    font-size: 20px;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.open-btn{
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    width: 100px;
+    color: rgb(89, 0, 89);
+    border: 0.5px solid;
+    border-color: gray;
+    background-color: white;
+}
