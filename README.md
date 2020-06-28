@@ -51,3 +51,8 @@ Here you will have to register yourself and then hit **SignUp**.
 
 
 ![7](https://user-images.githubusercontent.com/60189909/85953346-4ce7ac00-b98d-11ea-9a46-a31f1c578e35.png)
+
+8. Here *Members* can send messages in form of text to which will display under their name.
+
+
+![8](https://user-images.githubusercontent.com/60189909/85953808-8f5eb800-b990-11ea-9f59-efb4cc969683.png)
